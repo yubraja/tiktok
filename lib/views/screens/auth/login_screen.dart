@@ -10,7 +10,7 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold( 
+    return Scaffold(
       body: Container(
         alignment: Alignment.center,
         child: Column(
@@ -31,7 +31,7 @@ class LoginScreen extends StatelessWidget {
             ),
             Container(
               width: MediaQuery.of(context).size.width,
-              margin: EdgeInsets.symmetric(horizontal: 20),
+              margin: const EdgeInsets.symmetric(horizontal: 20),
               child: TextInputField(
                 controller: _emailController,
                 labelText: 'Email',
@@ -43,14 +43,14 @@ class LoginScreen extends StatelessWidget {
             ),
             Container(
               width: MediaQuery.of(context).size.width,
-              margin: EdgeInsets.symmetric(horizontal: 20),
+              margin: const EdgeInsets.symmetric(horizontal: 20),
               child: TextInputField(
                 controller: _passwordController,
                 labelText: 'Password',
                 icon: Icons.lock_outline_sharp,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Container(
@@ -61,11 +61,17 @@ class LoginScreen extends StatelessWidget {
                 borderRadius: const BorderRadius.all(Radius.circular(5)),
               ),
               child: InkWell(
-                onTap: () => print('Login Button Tapped!!'),
+                onTap: () => authController.loginUser(
+                  _emailController.text,
+                  _passwordController.text,
+                ),
                 child: const Center(
                   child: Text(
                     'Login',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                 ),
               ),
