@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tiktok/controllers/auth_controller.dart';
 import '../../widgets/text_input.dart';
 import '../../../constants.dart';
 
@@ -37,7 +36,7 @@ class SignupScreen extends StatelessWidget {
                   ),
                   Stack(
                     children: [
-                      CircleAvatar(
+                      const CircleAvatar(
                         radius: 64,
                         backgroundColor: Colors.black,
                         backgroundImage: NetworkImage(
@@ -49,7 +48,7 @@ class SignupScreen extends StatelessWidget {
                           left: 80,
                           child: IconButton(
                             onPressed: ()=>authController.pickImage(),
-                            icon: Icon(Icons.add_a_photo),
+                            icon: const Icon(Icons.add_a_photo),
                           ))
                     ],
                   ),
@@ -62,7 +61,7 @@ class SignupScreen extends StatelessWidget {
                   child: Column(children: [
                       Container(
                       width: MediaQuery.of(context).size.width,
-                      margin: EdgeInsets.symmetric(horizontal: 20),
+                      margin: const EdgeInsets.symmetric(horizontal: 20),
                       child: TextInputField(
                         controller: _usernameController,
                         labelText: 'Username',
@@ -74,7 +73,7 @@ class SignupScreen extends StatelessWidget {
                     ),
                     Container(
                       width: MediaQuery.of(context).size.width,
-                      margin: EdgeInsets.symmetric(horizontal: 20),
+                      margin: const EdgeInsets.symmetric(horizontal: 20),
                       child: TextInputField(
                         controller: _emailController,
                         labelText: 'Email',
@@ -86,7 +85,7 @@ class SignupScreen extends StatelessWidget {
                     ),
                     Container(
                       width: MediaQuery.of(context).size.width,
-                      margin: EdgeInsets.symmetric(horizontal: 20),
+                      margin: const EdgeInsets.symmetric(horizontal: 20),
                       child: TextInputField(
                         controller: _passwordController,
                         labelText: 'Password',
@@ -94,7 +93,7 @@ class SignupScreen extends StatelessWidget {
                         isObscure:true,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
                     Container(

@@ -16,9 +16,7 @@ class AuthController extends GetxController {
   void pickImage() async {
     final pickedImage =
         await ImagePicker().pickImage(source: ImageSource.gallery);
-    if (pickImage != null) {
-      Get.snackbar('Profile Picture', 'Sucessfully uploaded!!');
-    }
+    Get.snackbar('Profile Picture', 'Sucessfully uploaded!!');
     _pickedImage = Rx<File?>(File(pickedImage!.path));
   }
 
@@ -79,6 +77,10 @@ class AuthController extends GetxController {
   void loginUser(String email, String password) async {
     try {
       if (email.isNotEmpty && password.isNotEmpty) {
+
+        await firebaseAuth.signInWithEmailAndPassword(email: email, password: password);
+        print('login sucess!!');
+        
       } else {
         Get.snackbar('Incorrect Email or Password!!',
             'Please enter correct email and password');

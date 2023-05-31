@@ -7,7 +7,7 @@ class TextInputField extends StatelessWidget {
   final bool isObscure;
   final IconData icon;
  const  TextInputField(
-      {
+      {super.key, 
         required this.controller, 
         required this.labelText,
          this.isObscure=false,
@@ -22,7 +22,7 @@ class TextInputField extends StatelessWidget {
       decoration: InputDecoration(
         labelText: labelText,
         prefixIcon: Icon(icon),
-        labelStyle: TextStyle(fontSize: 20),
+        labelStyle: const TextStyle(fontSize: 20),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(5),
           borderSide: const BorderSide(
