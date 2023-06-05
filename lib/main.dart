@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tiktok/views/screens/auth/login_screen.dart';
+import 'package:tiktok/views/screens/home_screen.dart';
 import './controllers/auth_controller.dart';
 import 'package:get/get.dart';
 import './constants.dart';
@@ -25,8 +26,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: backgroundColor,
+        canvasColor: Colors.black,
+        
         
       ),
+      
       
       home: Scaffold(
       body: LoginScreen(),
