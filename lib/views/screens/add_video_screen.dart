@@ -1,9 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:tiktok/constants.dart';
+import '../screens/confirm_video_screen.dart';
 
 class AddVideoScreen extends StatelessWidget {
   const AddVideoScreen({super.key});
 
+  pickVideo(ImageSource source,BuildContext context) async{
+
+    final video= await ImagePicker().pickVideo(source: source);
+    if(video!= null){
+      Navigator.of(context).push(MaterialPageRoute(builder: ((context) => ConfirmVideoScreen())));
+    }
+
+  }
   _showOptionDialog(BuildContext context) {
     return showDialog(
       // you have to return the widget to show  each element..
@@ -11,9 +21,9 @@ class AddVideoScreen extends StatelessWidget {
       builder: (context) => SimpleDialog(
         children: [
           SimpleDialogOption(
-            onPressed: () {},
+            onPressed: () =>  pickVideo(ImageSource.gallery, context),
             child: Row(
-              children: const [
+              children: const [ 
                 Icon(Icons.image),
                 Padding(
                   padding: EdgeInsets.all(7.0),
