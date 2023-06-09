@@ -3,7 +3,7 @@ import 'package:tiktok/views/widgets/text_input.dart';
 import 'dart:io';
 
 import 'package:video_player/video_player.dart';
-
+//create stateful widget and provide path and videofile that can use to preview video
 class ConfirmVideoScreen extends StatefulWidget {
   File videoFile;
   String videoPath;
