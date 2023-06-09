@@ -12,8 +12,7 @@ class UploadVideoController extends GetxController{
       String uid=firebaseAuth.currentUser!.uid;
       DocumentSnapshot userDoc=await fireStore.collection('users').doc(uid).get();
 
-      something is going on
-
+    
     }
     catch(e){
 

@@ -8,7 +8,7 @@ class AddVideoScreen extends StatelessWidget {
   const AddVideoScreen({super.key});
 
   pickVideo(ImageSource source, BuildContext context) async {
-    final video = await ImagePicker().pickVideo(source: source);
+    final video = await ImagePicker().pickVideo(source: source);//directly form imagepicekr
     if (video != null) {
       Navigator.of(context).push(
         MaterialPageRoute(
