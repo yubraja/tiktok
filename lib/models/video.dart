@@ -27,4 +27,37 @@ class Video {
     required this.thumbnail,
   });
 
+  Map<String, dynamic> toJson() {
+    return {
+      "username": username,
+      "uid": uid,
+      "id": id,
+      "likes": likes,
+      "commentCount": commentCount,
+      "shareCount": shareCount,
+      "songName": songName,
+      "caption": caption,
+      "videoUrl": videoUrl,
+      "profilePhoto": profilePhoto,
+      "thumbnail": thumbnail,
+    };
+  }
+
+  static Video fromSnap(DocumentSnapshot snap) {
+    var snapshot = snap.data() as Map<String, dynamic>;
+    return Video(
+      username: snapshot['username'],
+      uid: snapshot['username'],
+      profilePhoto: snapshot['profilePhoto'],
+      id: snapshot['id'],
+      likes: snapshot['likes'],
+      commentCount: snapshot['commentCount'],
+      shareCount: snapshot['shareCount'],
+      songName: snapshot['songName'],
+      caption: snapshot['caption'],
+      videoUrl: snapshot['videoUrl'],
+      thumbnail: snapshot['thumbnail'],
+      
+    );
+  }
 }
